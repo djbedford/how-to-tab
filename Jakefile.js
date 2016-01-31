@@ -1,6 +1,7 @@
 /**
  * Created by djbedford on 29/01/16.
  */
+/* globals desc: false, task: false, complete: false, fail: false */
 
 (function () {
     'use strict';
@@ -31,7 +32,24 @@
 
         jshint.checkFiles({
             files: 'Jakefile.js',
-            options: {},
+            options: {
+                bitwise: true,
+                curly: true,
+                eqeqeq: true,
+                forin: true,
+                freeze: true,
+                futurehostile: true,
+                latedef: 'nofunc',
+                noarg: true,
+                nocomma: true,
+                nonbsp: true,
+                nonew: true,
+                strict: true,
+                undef: true,
+
+                node: true,
+                browser: true
+            },
             globals: {}
         }, complete, fail);
     }, { async: true });
