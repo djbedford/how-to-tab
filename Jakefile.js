@@ -64,10 +64,8 @@
         console.log('Testing JavaScript');
         karma.run({
             configFile: KARMA_CONFIG,
-            expectedBrowsers: [
-                'Chrome 47.0.2526 (Windows 8.1 0.0.0)',
-                'Firefox 42.0.0 (Windows 8.1 0.0.0)'
-            ]
+            expectedBrowsers: testBrowsers(),
+            strict: !process.env.loose
         }, complete, fail);
     }, { async: true });
 
@@ -102,5 +100,13 @@
             beforeEach: false,
             afterEach: false
         };
+    }
+
+    function testBrowsers () {
+        return [
+            'Chrome 47.0.2526 (Windows 8.1 0.0.0)',
+            'Firefox 42.0.0 (Windows 8.1 0.0.0)',
+            'IE 11.0.0 (Windows 8.1 0.0.0)'
+        ];
     }
 })();
