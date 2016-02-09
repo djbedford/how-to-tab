@@ -1,7 +1,7 @@
 /**
  * Created by djbedford on 29/01/16.
  */
-/* globals jake: false, desc: false, task: false, complete: false, fail: false */
+/* globals jake: false, desc: false, task: false, complete: false, fail: false, directory: false */
 
 (function () {
     'use strict';
@@ -85,7 +85,7 @@
         shell.cp('src/content/*', DIST_DIR);
 
         jake.exec('node node_modules/browserify/bin/cmd.js src/javascript/app.js -o ' + DIST_DIR + '/bundle.js', { interactive: true }, complete);
-    });
+    }, { async: true });
 
     directory(DIST_DIR);
 
