@@ -5,8 +5,8 @@
 (function() {
     'use strict';
 
-    var addition = require('./addition.js');
+    var arithmetic = require('./arithmetic.js');
 
     console.log('Hello!');
-    console.log('42 + 13 = ' + addition.add(42, 13));
+    console.log('42 + 13 = ' + arithmetic.add(42, 13));
 })();
