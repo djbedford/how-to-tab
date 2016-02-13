@@ -9,13 +9,35 @@
     var tabs = require('./tabs.js');
 
     describe('Tabs', function () {
-        it('has an API', function () {
-            tabs.initialize();
+        it('hides an element', function () {
+            // Arrange
+            var element = addElement('div');
 
-            //var div = document.createElement('div');
-            //div.innerHTML = 'This is an example';
-            //document.body.appendChild(div);
-            //div.parentNode.removeChild(div);
+            // Act
+            tabs.initialize(element);
+
+            // Assert
+            assert.equal(getDisplayProperty(element), 'none');
+
+            // Reset
+            removeElement(element);
         });
+
+        function addElement (tagName) {
+            var element = document.createElement(tagName);
+            document.body.appendChild(element);
+
+            return element;
+        }
+
+        function getDisplayProperty (element) {
+            var styles = getComputedStyle(element);
+
+            return styles.getPropertyValue('display');
+        }
+
+        function removeElement (element) {
+            element.parentNode.removeChild(element);
+        }
     });
 })();
