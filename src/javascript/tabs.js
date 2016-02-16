@@ -14,22 +14,22 @@
         var content = options.content;
         var defaultTab = options.defaultTab;
         var activeTabClass = options.activeTabClass;
-        var contentHideClass = options.contentHideClass;
+        var hiddenContentClass = options.hiddenContentClass;
 
         checkOption(tabs, 'options.tab');
         checkOption(tabs, 'options.content');
         checkOption(tabs, 'options.defaultTab');
         checkOption(tabs, 'options.activeTabClass');
-        checkOption(tabs, 'options.contentHideClass');
+        checkOption(tabs, 'options.hiddenContentClass');
 
         var activeIndex = findIndexOfDefaultElement(tabs, defaultTab);
         var defaultContent = content[activeIndex];
 
         content.forEach(function (element) {
-            element.classList.add(contentHideClass);
+            element.classList.add(hiddenContentClass);
         });
 
-        defaultContent.classList.remove(contentHideClass);
+        defaultContent.classList.remove(hiddenContentClass);
         defaultTab.classList.add(activeTabClass);
     };
 
