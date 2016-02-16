@@ -22,7 +22,11 @@
         checkOption(tabs, 'options.activeTabClass');
         checkOption(tabs, 'options.hiddenContentClass');
 
-        var activeIndex = findIndexOfDefaultElement(tabs, defaultTab);
+        showTab(defaultTab, tabs, content, activeTabClass, hiddenContentClass);
+    };
+
+    function showTab(tabToShow, tabs, content, activeTabClass, hiddenContentClass) {
+        var activeIndex = findIndexOfDefaultElement(tabs, tabToShow);
         var defaultContent = content[activeIndex];
 
         content.forEach(function (element) {
@@ -30,8 +34,8 @@
         });
 
         defaultContent.classList.remove(hiddenContentClass);
-        defaultTab.classList.add(activeTabClass);
-    };
+        tabToShow.classList.add(activeTabClass);
+    }
 
     function findIndexOfDefaultElement(contentTabs, defaultContentTab) {
         for (var i = 0; i < contentTabs.length; i++) {
