@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Tab Example</title>
     <link rel="stylesheet" href="screen.css">
+
+    <script defer src="bundle.js"></script>
 </head>
 <body>
     <ul class="tabs">
-        <li><a>Tab 1</a></li>
-        <li><a>Tab 2</a></li>
-        <li><a>Tab 3</a></li>
+        <li id="tab1"><a>Tab 1</a></li>
+        <li id="tab2"><a>Tab 2</a></li>
+        <li id="tab3"><a>Tab 3</a></li>
     </ul>
 
     <div class="container">
-        <div>
+        <div id="content1">
             <h1>Tab 1 Content</h1>
             <p>
                 Lee is a founding Director at Netsend Limited with over 20 years of sales and
@@ -27,7 +29,7 @@
                 and Eastern Europe.
             </p>
         </div>
-        <div>
+        <div id="content2">
             <h1>Tab 2 Content</h1>
             <p>
                 As Chief Technology Officer, I am responsible for driving the direction of our software
@@ -35,7 +37,7 @@
                 the overall architecture of our IT systems.
             </p>
         </div>
-        <div>
+        <div id="content3">
             <h1>Tab 3 Content</h1>
             <p>
                 Our e-billing service and portal was launched in 2005. Built and maintained in the UK by our own
