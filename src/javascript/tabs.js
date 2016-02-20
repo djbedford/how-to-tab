@@ -22,7 +22,7 @@
 
     function handleClicks(options) {
         options.tabs.forEach(function (tabElement) {
-            tabElement.addEventListener('click', function (event) {
+            tabElement.addEventListener('click', function () {
                 showTab(tabElement, options);
             });
         });
